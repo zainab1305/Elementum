@@ -19,6 +19,7 @@
   --purple-dark: #9A5AFA;
   --green-dark: #2F3B33;
   --footer: #B1D9B9;
+  --red: #F16666;
 }
 
 * {
@@ -146,6 +147,12 @@ main {
   display: inline-block;
   position: relative;
   white-space: nowrap;
+  /* keep this for most labels, but not mandatory everywhere */
+}
+
+.hollow-text {
+  color: transparent !important;
+  -webkit-text-stroke: 2px var(--text);
 }
 
 .mark-yellow-underline {
@@ -156,9 +163,10 @@ main {
 .underline-img {
   position: absolute;
   left: 0;
-  bottom: -30px;
+  bottom: -15px;
   width: 100%;
   height: auto;
+  transform: scale(1.1);
   z-index: -1;
   pointer-events: none;
 }
@@ -286,12 +294,13 @@ main {
 /* OTHER SECTIONS (Kept from original app structure, just adapted) */
 .intro-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
+  position: relative;
   margin: 0 auto 150px;
-  max-width: 1200px;
-  padding: 0 60px;
+  max-width: 1350px;
+  padding: 0 40px;
 }
 
 .intro-card.reverse {
@@ -300,6 +309,11 @@ main {
 
 .intro-card.reverse .intro-copy {
   direction: ltr;
+}
+
+.intro-copy {
+  position: relative;
+  z-index: 2;
 }
 
 .intro-copy h2 {
@@ -312,11 +326,12 @@ main {
 }
 
 .intro-copy p {
+  font-family: 'Satoshi', sans-serif;
   margin-top: 30px;
   opacity: 0.8;
-  max-width: 480px;
-  line-height: 1.6;
-  font-size: 18px;
+  max-width: 715px;
+  line-height: 36px;
+  font-size: 24px;
 }
 
 .inline-link {
@@ -339,33 +354,82 @@ main {
   opacity: 0.7;
 }
 
+.main-content-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-wavy-line {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
 .intro-image-wrap {
   position: relative;
   justify-self: center;
-  width: min(550px, 100%);
-  aspect-ratio: 1.1;
+  width: min(450px, 100%);
+  aspect-ratio: 1;
 }
 
 .intro-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 999px;
+  border-radius: 50%;
   position: relative;
   z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.image-decorator {
+.shape-red-square {
   position: absolute;
-  top: -10%;
-  right: -20%;
-  width: 100%;
-  height: 100%;
-  background: #F16666;
-  opacity: 0.8;
-  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  width: 200px;
+  height: 200px;
+  background-color: var(--red);
+  top: -20px;
+  right: -40px;
+  transform: rotate(15deg);
   z-index: 1;
-  border-radius: 40px;
+}
+
+.shape-red-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 200px solid var(--red);
+  z-index: 1;
+}
+
+.shape-red-triangle.top-left {
+  top: 10px;
+  left: -80px;
+  transform: rotate(20deg);
+}
+
+.shape-red-triangle.bottom-right {
+  bottom: -40px;
+  right: -60px;
+  transform: rotate(-15deg);
+  z-index: 3;
+}
+
+.red-splash-bg {
+  position: absolute;
+  top: -100px;
+  left: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(241, 102, 102, 0.15) 0%, rgba(241, 102, 102, 0) 60%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .intro-card.reverse .image-decorator {

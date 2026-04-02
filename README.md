@@ -1,16 +1,63 @@
-# React + Vite
+﻿# The Website Global
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React implementation of the provided Figma-inspired landing page, built with Vite and prepared for Docker-based submission.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- CSS
+- Docker + Nginx
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/App.jsx`: top-level page composition
+- `src/components/Navbar.jsx`: navigation/header
+- `src/components/Hero.jsx`: hero headline and face collage
+- `src/components/IntroSection.jsx`: reusable split intro section
+- `src/components/OffersSection.jsx`: offer heading and rows
+- `src/components/TestimonialSection.jsx`: testimonial heading, quote card, and floating portraits
+- `src/components/SiteFooter.jsx`: newsletter CTA and footer links
+- `src/index.css`: global styling and responsive rules
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Docker
+
+Run the project with Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+The production container is served through Nginx using the included `Dockerfile`, `docker-compose.yml`, and `nginx.conf`.
+
+## Notes
+
+- The UI has been divided into reusable React components without changing the visual implementation.
+- Assets in `src/assets` are used directly to match the supplied design.
+- Responsive behavior for desktop, tablet, and mobile is handled in `src/index.css`.

@@ -10,7 +10,7 @@ import underlineImg from '../assets/underline.png'
 
 function HeroFace({ slot, src }) {
     return (
-        <div className={`face-slot image-circle slot-${slot}`}>
+        <div className={`face-slot image-circle slot-${slot}`} >
             <img src={src} alt="" aria-hidden="true" />
         </div>
     )
@@ -36,8 +36,8 @@ export default function Hero() {
                     the <span className="mark mark-mint-badge">status</span> Quo with
                 </h1>
                 <p>
-                    We are a team of strategists, designers communicators, researchers. Togeather,<br />
-                    we belive that progress only hghappens when you refuse to play things safe.
+                    We are a team of strategists, designers, communicators, researchers. Together,<br />
+                    we believe that progress only happens when you refuse to play things safe.
                 </p>
             </div>
 
@@ -62,3 +62,4 @@ export default function Hero() {
         </section>
     )
 }
+

@@ -2,7 +2,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import tomorrowImg from './assets/tomorrow.png'
 import underlineImg from './assets/underline.png'
-import see from "./assets/see.png"
+import seeImg from './assets/See.png'
+import bgLine from './assets/BG line.png'
 
 const offerItems = [
   {
@@ -31,9 +32,8 @@ function App() {
       <Navbar />
 
       <main className="main-content-area">
-        <svg className="bg-wavy-line" preserveAspectRatio="none" viewBox="0 0 1440 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1430,200 C1300,600 600,0 400,600 C200,1200 -100,500 -300,500" stroke="#F16666" strokeWidth="4" />
-        </svg>
+        {/* <img src={bgLine} className="bg-line bg-line-one" alt="" aria-hidden="true" />
+        <img src={bgLine} className="bg-line bg-line-two" alt="" aria-hidden="true" /> */}
 
         <Hero />
 
@@ -48,7 +48,7 @@ function App() {
               be better than <span className="mark mark-mint-badge">today</span>
             </h2>
             <p>
-              We are a team of strategists, designers communicators, researchers. Together, we believe that progress only happens when you refuse to play things safe.
+              We are a team of strategists, designers, communicators, researchers. Together, we believe that progress only happens when you refuse to play things safe.
             </p>
             <a href="#" className="inline-link" aria-label="Read more about our vision">
               Read more
@@ -79,7 +79,7 @@ function App() {
           <div className="intro-image-wrap">
             <div className="shape-red-triangle top-left"></div>
             <div className="shape-red-triangle bottom-right"></div>
-            <img src={see} alt="Team presentation" />
+            <img src={seeImg} alt="Team presentation" />
           </div>
         </section>
 

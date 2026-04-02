@@ -501,10 +501,11 @@ main {
 
 .offer-row {
   display: grid;
-  grid-template-columns: 240px minmax(0, 923px) 70px;
+  grid-template-columns: 235px minmax(0, 1fr) 72px;
   align-items: center;
-  gap: 42px;
-  padding: 35px 0;
+  gap: 46px;
+  padding: 30px 0;
+  min-height: 111px;
   border-bottom: 1px solid var(--line);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -517,26 +518,48 @@ main {
 
 .offer-row p {
   font-family: 'Satoshi', sans-serif;
-  font-size: 15px;
-  opacity: 0.7;
-  line-height: 1.5;
-  max-width: 220px;
+  font-size: 16px;
+  opacity: 0.95;
+  line-height: 1.45;
+  max-width: 210px;
+  white-space: pre-line;
+}
+
+.offer-title-wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .offer-row h3 {
   font-family: 'NewGerbil', 'Gerbil', sans-serif;
   font-weight: 400;
   font-size: 56px;
-  line-height: 116px;
+  line-height: 1.04;
   letter-spacing: 0;
   width: 100%;
-  max-width: 923px;
+  max-width: 100%;
   white-space: nowrap;
+  position: relative;
+  z-index: 2;
 }
 
 .offer-row span {
   font-size: 34px;
   justify-self: end;
+  line-height: 1;
+}
+
+.offer-round-thing {
+  position: absolute;
+  top: 58%;
+  left: 62%;
+  width: 118px;
+  height: 118px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  z-index: 1;
 }
 
 .testimonial-section {

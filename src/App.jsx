@@ -1,21 +1,22 @@
-import Navbar from './components/Navbar'
+﻿import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import tomorrowImg from './assets/tomorrow.png'
 import underlineImg from './assets/underline.png'
 import seeImg from './assets/See.png'
 import bgLine from './assets/BG line.png'
+import roundThingImg from './assets/round thing.png'
 
 const offerItems = [
   {
-    label: 'Office of multiple interest content',
+    label: 'Office of multiple\ninterest content',
     title: 'Collaborative & partnership',
   },
   {
-    label: 'The hanger US Air force digital experimental',
+    label: 'The hanger US Air force\ndigital experimental',
     title: 'We talk about our weight',
   },
   {
-    label: 'Delta faucet content, social, digital',
+    label: 'Delta faucet content,\nsocial, digital',
     title: 'Piloting digital confidence',
   },
 ]
@@ -44,11 +45,14 @@ function App() {
               <span className="mark mark-yellow-underline">
                 Tomorrow
                 <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
-              </span> should<br />
+              </span>{' '}
+              should
+              <br />
               be better than <span className="mark mark-mint-badge">today</span>
             </h2>
             <p>
-              We are a team of strategists, designers, communicators, researchers. Together, we believe that progress only happens when you refuse to play things safe.
+              We are a team of strategists, designers, communicators, researchers. Together, we believe that progress only
+              happens when you refuse to play things safe.
             </p>
             <a href="#" className="inline-link" aria-label="Read more about our vision">
               Read more
@@ -63,14 +67,17 @@ function App() {
         <section className="intro-card reverse">
           <div className="intro-copy">
             <h2>
-              <span className="mark mark-mint-badge">See</span> how we can<br />
-              help you <span className="mark mark-yellow-underline">
+              <span className="mark mark-mint-badge">See</span> how we can
+              <br />
+              help you{' '}
+              <span className="mark mark-yellow-underline">
                 progress
                 <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
               </span>
             </h2>
             <p>
-              We add a layer of fearless insights and action that allows change makers to accelerate their progress in areas such as brand, design, digital, comms and social research.
+              We add a layer of fearless insights and action that allows change makers to accelerate their progress in areas
+              such as brand, design, digital, comms and social research.
             </p>
             <a href="#" className="inline-link" aria-label="Read more about our services">
               Read more
@@ -91,18 +98,29 @@ function App() {
             </span>
             <span className="offers-title-line-two">
               <span className="mark mark-yellow-underline">
-              offer
-              <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
-              </span>{' '}you
+                offer
+                <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
+              </span>{' '}
+              you
             </span>
           </h2>
-          
+
           <ul>
-            {offerItems.map((item) => (
-              <li key={item.title} className="offer-row">
+            {offerItems.map((item, index) => (
+              <li key={item.title} className={`offer-row${index === 2 ? ' offer-row-accent' : ''}`}>
                 <p>{item.label}</p>
-                <h3>{item.title}</h3>
-                <span aria-hidden="true">→</span>
+                <div className="offer-title-wrap">
+                  <h3>{item.title}</h3>
+                  {index === 2 ? (
+                    <img
+                      src={roundThingImg}
+                      alt=""
+                      aria-hidden="true"
+                      className="offer-round-thing"
+                    />
+                  ) : null}
+                </div>
+                <span aria-hidden="true">&rarr;</span>
               </li>
             ))}
           </ul>
@@ -119,7 +137,9 @@ function App() {
 
           <div className="testimonial-quote-wrap">
             <blockquote>
-              Elementum delivered the site within the timeline as they requested. In the end, the client found a 50% increase in traffic within days since its launch. They also had an impressive ability to use technologies that the company hasn't used, which have also proved to be easy to use and reliable.
+              Elementum delivered the site within the timeline as they requested. In the end, the client found a 50%
+              increase in traffic within days since its launch. They also had an impressive ability to use technologies
+              that the company hasn't used, which have also proved to be easy to use and reliable.
             </blockquote>
           </div>
         </section>

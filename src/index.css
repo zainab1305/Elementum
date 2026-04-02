@@ -713,96 +713,134 @@ main {
 
 .site-footer {
   background: var(--footer);
-  padding: 100px 60px 40px;
-  border-radius: 60px 60px 0 0;
-  margin-top: 40px;
+  padding: 72px 88px 32px;
+  border-radius: 0;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .newsletter {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 760px;
+  margin: 0 auto 48px;
   position: relative;
+  min-height: 220px;
 }
 
 .newsletter h2 {
-  font-size: clamp(54px, 7vw, 100px);
-  line-height: 1;
+  font-family: 'NewGerbil', 'Gerbil', sans-serif;
+  font-size: clamp(64px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
 }
 
 .newsletter p {
   color: var(--green-dark);
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-.newsletter-form {
-  display: flex;
-  margin: 40px auto 0;
-  max-width: 500px;
-  background: #FFF;
-  border-radius: 999px;
-  padding: 8px 8px 8px 24px;
-}
-
-.newsletter-form input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
+  margin-top: 14px;
   font-size: 16px;
-  font-family: inherit;
+  font-family: 'Satoshi', sans-serif;
 }
 
-.newsletter-form button {
+.newsletter-cta {
+  margin-top: 22px;
   border: none;
   border-radius: 999px;
-  padding: 16px 36px;
+  padding: 19px 28px;
   font-size: 16px;
   background: #101010;
   color: #FFF;
   cursor: pointer;
   transition: background 0.2s;
-  font-family: inherit;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
 }
 
-.newsletter-form button:hover {
+.newsletter-cta:hover {
   background: #2D2D2D;
 }
 
+.newsletter-doodle {
+  position: absolute;
+  top: -52px;
+  left: 310px;
+  width: 170px;
+  height: 90px;
+  pointer-events: none;
+}
+
+.newsletter-doodle::before,
+.newsletter-doodle::after {
+  content: '';
+  position: absolute;
+  width: 86px;
+  height: 70px;
+  border-top: 2px solid #ff6666;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.newsletter-doodle::before {
+  left: 0;
+  top: 0;
+  transform: rotate(-18deg);
+}
+
+.newsletter-doodle::after {
+  left: 56px;
+  top: -6px;
+  transform: rotate(-12deg);
+}
+
+.newsletter-purple-shape {
+  position: absolute;
+  top: 244px;
+  right: -344px;
+  width: 244px;
+  height: 244px;
+  background: #8d44ea;
+  border-radius: 50%;
+  clip-path: inset(0 50% 0 0);
+  transform: rotate(300deg);
+}
+
 .footer-grid {
-  margin-top: 100px;
-  padding-top: 40px;
-  border-top: 2px solid rgba(47, 59, 51, 0.2);
+  margin-top: 28px;
+  padding-top: 54px;
+  border-top: 1px solid rgba(25, 27, 31, 0.5);
   display: grid;
   grid-template-columns: repeat(4, minmax(140px, 1fr));
-  gap: 40px;
-  max-width: 1440px;
+  gap: 54px;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
 
-
-
 .footer-grid h4 {
+  font-family: 'NewGerbil', 'Gerbil', sans-serif;
   font-size: 22px;
-  margin-bottom: 24px;
-  color: var(--green-dark);
+  margin-bottom: 22px;
+  color: #191b1f;
 }
 
 .footer-grid a,
 .footer-grid p {
   display: block;
-  margin-bottom: 12px;
-  color: #3f4b43;
+  margin-bottom: 18px;
+  color: #191b1f;
   font-size: 15px;
+  line-height: 1.4;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .copyright {
-  margin-top: 60px;
+  margin-top: 88px;
   text-align: center;
   font-size: 14px;
-  color: rgba(47, 59, 51, 0.7);
+  color: rgba(25, 27, 31, 0.8);
+  font-family: 'Satoshi', sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -881,6 +919,11 @@ main {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .newsletter-purple-shape,
+  .newsletter-doodle {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -918,24 +961,6 @@ main {
 
   .offers-title-line-one {
     white-space: normal;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-    background: transparent;
-    padding: 0;
-    gap: 15px;
-  }
-
-  .newsletter-form input {
-    background: #FFF;
-    padding: 16px 24px;
-    border-radius: 999px;
-    width: 100%;
-  }
-
-  .newsletter-form button {
-    width: 100%;
   }
 
   .footer-grid {

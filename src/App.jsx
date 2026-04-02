@@ -181,12 +181,15 @@ function App() {
 
       <footer className="site-footer">
         <section className="newsletter">
-          <h2>Subscribe to our newsletter</h2>
+          <div className="newsletter-doodle" aria-hidden="true"></div>
+          <div className="newsletter-purple-shape" aria-hidden="true"></div>
+          <h2>
+            Subscribe to
+            <br />
+            our newsletter
+          </h2>
           <p>To make your stay special and even more memorable</p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Enter your email address..." required aria-label="Email Address" />
-            <button type="submit">Subscribe Now</button>
-          </form>
+          <button type="button" className="newsletter-cta">Subscribe Now</button>
         </section>
 
         <section className="footer-grid">
@@ -215,9 +218,9 @@ function App() {
             ))}
           </div>
           <div>
-            <h4>Contact</h4>
-            <p>1498W Fulton st, STE 2D Chicago, IL 63867.</p>
-            <p>+1(214) 36790100</p>
+            <h4>Terms & Policies</h4>
+            <p>1498w Fulton ste, STE<br />2D Chicago, IL 63867.</p>
+            <p>(123) 456789000</p>
             <a href="mailto:info@elementum.com">info@elementum.com</a>
           </div>
         </section>

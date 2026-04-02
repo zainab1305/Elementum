@@ -5,6 +5,14 @@ import underlineImg from './assets/underline.png'
 import seeImg from './assets/See.png'
 import bgLine from './assets/BG line.png'
 import roundThingImg from './assets/round thing.png'
+import l1Img from './assets/L1.png'
+import l2Img from './assets/L2.png'
+import l3Img from './assets/L3.png'
+import l4Img from './assets/L4.png'
+import r1Img from './assets/R1.png'
+import r2Img from './assets/R2.png'
+import r3Img from './assets/R3.png'
+import r4Img from './assets/R4.png'
 
 const offerItems = [
   {
@@ -26,6 +34,17 @@ const footerLinks = {
   terms: ['Privacy Policy', 'Terms & Conditions', 'Explore', 'Accessibility'],
   social: ['Instagram', 'LinkedIn', 'Youtube', 'Twitter'],
 }
+
+const testimonialFaces = [
+  { className: 'testimonial-face l1', src: l1Img, alt: '' },
+  { className: 'testimonial-face l2', src: l2Img, alt: '' },
+  { className: 'testimonial-face l3', src: l3Img, alt: '' },
+  { className: 'testimonial-face l4', src: l4Img, alt: '' },
+  { className: 'testimonial-face r1', src: r1Img, alt: '' },
+  { className: 'testimonial-face r2', src: r2Img, alt: '' },
+  { className: 'testimonial-face r3', src: r3Img, alt: '' },
+  { className: 'testimonial-face r4', src: r4Img, alt: '' },
+]
 
 function App() {
   return (
@@ -127,19 +146,34 @@ function App() {
         </section>
 
         <section className="testimonial-section">
-          <h2>
-            What our customer says <br />
-            <span className="mark mark-yellow-underline">
-              About Us
-              <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
+          {testimonialFaces.map((face) => (
+            <img
+              key={face.className}
+              src={face.src}
+              alt={face.alt}
+              aria-hidden="true"
+              className={face.className}
+            />
+          ))}
+
+          <h2 className="testimonial-title">
+            <span className="testimonial-title-line">
+              <span className="mark mark-mint-badge">What</span> our customer
+            </span>
+            <span className="testimonial-title-line">
+              says{' '}
+              <span className="mark mark-yellow-underline">
+                About Us
+                <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
+              </span>
             </span>
           </h2>
 
           <div className="testimonial-quote-wrap">
             <blockquote>
-              Elementum delivered the site within the timeline as they requested. In the end, the client found a 50%
-              increase in traffic within days since its launch. They also had an impressive ability to use technologies
-              that the company hasn't used, which have also proved to be easy to use and reliable.
+              Elementum delivered the site with inthe timeline as they requested. Inthe end, the client found a 50%
+              increase in traffic with in days since its launch. They also had an impressive ability to use
+              technologies that the company hasn`t used, which have also proved to be easy to use and reliable
             </blockquote>
           </div>
         </section>

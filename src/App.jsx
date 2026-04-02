@@ -7,15 +7,15 @@ import bgLine from './assets/BG line.png'
 
 const offerItems = [
   {
-    label: 'Office of our help project...',
+    label: 'Office of multiple interest content',
     title: 'Collaborative & partnership',
   },
   {
-    label: 'The larger US & more... digital movements',
+    label: 'The hanger US Air force digital experimental',
     title: 'We talk about our weight',
   },
   {
-    label: 'Direct feedback / contact... social digital',
+    label: 'Delta faucet content, social, digital',
     title: 'Piloting digital confidence',
   },
 ]
@@ -84,12 +84,19 @@ function App() {
         </section>
 
         <section className="offers-section">
-          <h2>
-            What <span className="mark mark-mint-badge">we can</span> <span className="mark mark-yellow-underline">
+          <img src={bgLine} className="bg-line bg-line-offers" alt="" aria-hidden="true" />
+          <h2 className="offers-title">
+            <span className="offers-title-line-one">
+              What we <span className="mark mark-mint-badge">can</span>
+            </span>
+            <span className="offers-title-line-two">
+              <span className="mark mark-yellow-underline">
               offer
               <img src={underlineImg} className="underline-img" alt="" aria-hidden="true" />
-            </span> you!
+              </span>{' '}you
+            </span>
           </h2>
+          
           <ul>
             {offerItems.map((item) => (
               <li key={item.title} className="offer-row">

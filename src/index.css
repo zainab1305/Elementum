@@ -452,6 +452,7 @@ main {
   max-width: 1200px;
   margin: 60px auto 150px;
   padding: 0 60px;
+  position: relative;
 }
 
 .offers-section h2 {
@@ -459,6 +460,36 @@ main {
   line-height: 1.1;
   max-width: 600px;
   margin-bottom: 50px;
+}
+
+.offers-title {
+  font-family: 'NewGerbil', 'Gerbil', sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 116px;
+  letter-spacing: 0;
+  width: 100%;
+  max-width: 831px;
+  margin-bottom: 58px;
+}
+
+.offers-title-line-one,
+.offers-title-line-two {
+  display: block;
+}
+
+.offers-title-line-one {
+  white-space: nowrap;
+}
+
+.offers-title .mark-mint-badge {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.bg-line-offers {
+  top: -405px;
+  right: -1110px;
 }
 
 .offers-section ul {
@@ -470,9 +501,9 @@ main {
 
 .offer-row {
   display: grid;
-  grid-template-columns: minmax(180px, 320px) 1fr 40px;
+  grid-template-columns: 240px minmax(0, 923px) 70px;
   align-items: center;
-  gap: 30px;
+  gap: 42px;
   padding: 35px 0;
   border-bottom: 1px solid var(--line);
   transition: all 0.2s ease;
@@ -485,17 +516,27 @@ main {
 }
 
 .offer-row p {
+  font-family: 'Satoshi', sans-serif;
   font-size: 15px;
   opacity: 0.7;
   line-height: 1.5;
+  max-width: 220px;
 }
 
 .offer-row h3 {
-  font-size: clamp(32px, 4vw, 54px);
+  font-family: 'NewGerbil', 'Gerbil', sans-serif;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 116px;
+  letter-spacing: 0;
+  width: 100%;
+  max-width: 923px;
+  white-space: nowrap;
 }
 
 .offer-row span {
   font-size: 34px;
+  justify-self: end;
 }
 
 .testimonial-section {
@@ -679,6 +720,12 @@ main {
     padding: 25px 0;
   }
 
+  .offer-row h3 {
+    font-size: 42px;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
   .offer-row span {
     display: none;
   }
@@ -712,6 +759,21 @@ main {
   .testimonial-section h2,
   .newsletter h2 {
     font-size: 36px;
+  }
+
+  .offer-row h3 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .offers-title {
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.08;
+  }
+
+  .offers-title-line-one {
+    white-space: normal;
   }
 
   .newsletter-form {
